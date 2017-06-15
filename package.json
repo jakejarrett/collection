@@ -1,0 +1,22 @@
+{
+  "name": "@jakejarrett/collection",
+  "version": "1.0.0",
+  "description": "Minimal collection inspired by Backbone's collection",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  },
+  "keywords": [
+    "Model"
+  ],
+  "author": "Jake Jarrett <jakeryanjarrett@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-remove-comments": "^2.0.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.48.0"
+  }
+}
