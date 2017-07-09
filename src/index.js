@@ -9,35 +9,35 @@ export class Collection {
     /**
      * Construct a new collection
      * 
-     * @param {Array} models The initialization options
+     * @param {Array} m The initialization options
      */
-    constructor (models: Array) : void {
-        if (null == models) models = [];
-        this.models = models;
+    constructor (m: Array) : void {
+        this.models = m || [];
     }
 
     /**
      * Set a value in the attributes object
      * 
-     * @param {Object} model The model you're adding into the collection
+     * @param {Object} m The model you're adding into the collection
      * @returns {void} Nothing
      */
-    add (model: Object) : void {
-        this.models.push(model);
+    add (m: Object) : void {
+        this.models.push(m);
     }
 
     /**
      * Set a value in the attributes object
      * 
-     * @param {Object} model The model you're adding into the collection
+     * @param {Object} m The model you're adding into the collection
+     * @param {Void} k Param that will get overridden to save space
      * @returns {void} Nothing
      */
-    remove (model: Object) : void {
-        const keys = Object.keys(model);
-        this.models = this.models.filter(fModel => {
-            let same = true;
-            keys.forEach(key => { if(model[key] !== fModel[key]) same = false });
-            return same;
+    remove (m: Object, k: Array) : void {
+        k = Object.keys(m);
+        this.models = this.models.filter((f, s) => {
+            s = !!1;
+            k.forEach(key => { if(m[key] !== f[key]) s = !1 });
+            return s;
         });
     }
 
